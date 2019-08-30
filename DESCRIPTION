@@ -1,0 +1,15 @@
+Package: CurriculumVitae
+Title: Data Visulisations of Career History
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Gareth",
+           family = "Burns",
+           role = c("aut", "cre"),
+           email = "gareth.burns@exploristics.com")
+Description: This packages provides creates a series of data visualations of career history and assocated reports.
+License: What license it uses
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat
+RoxygenNote: 6.1.1
