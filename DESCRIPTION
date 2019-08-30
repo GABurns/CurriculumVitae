@@ -14,7 +14,8 @@ Imports:
     SnowballC,
     tm,
     RCurl,
-    XML
+    XML,
+    stringi
 Suggests: 
     testthat
 RoxygenNote: 6.1.1
