@@ -3,11 +3,11 @@
 #' @rdname createTermDocumentMatrix
 #' @name createTermDocumentMatrix
 #' @description Function to create a term-document matrix based on a text file/object.
-#' @param x: character string (plain text, web url, txt file path)
-#' @param type: specify whether x is a plain text, a web page url or a file path
-#' @param lang: the language of the text
-#' @param excludeWords: a vector of words to exclude from the text
-#' @param textStemming: reduces words to their root form
+#' @param x character string (plain text, web url, txt file path)
+#' @param type specify whether x is a plain text, a web page url or a file path
+#' @param lang the language of the text
+#' @param excludeWords a vector of words to exclude from the text
+#' @param textStemming reduces words to their root form
 #' @return a list(tdm, freqTable)
 #' @import 'tm' 'SnowballC' 
 #' @references \url{http://www.sthda.com/english/wiki/word-cloud-generator-in-r-one-killer-function-to-do-everything-you-need} 
@@ -58,25 +58,4 @@ createTermDocumentMatrix <- function(x, type = c("text", "url", "file"),
   d <- data.frame(word = names(v),freq=v)
   
   return(list(tdm=tdm, freqTable = d))
-}
-
-
-  
-
-#++++++++++++++++++++++
-# Helper function
-#++++++++++++++++++++++
-# Download and parse webpage
-html_to_text<-function(url){
-  library(RCurl)
-  library(XML)
-  # download html
-  html.doc <- getURL(url)  
-  #convert to plain text
-  doc = htmlParse(html.doc, asText=TRUE)
-  # "//text()" returns all text outside of HTML tags.
-  # We also don’t want text such as style and script codes
-  text <- xpathSApply(doc, "//text()[not(ancestor::script)][not(ancestor::style)][not(ancestor::noscript)][not(ancestor::form)]", xmlValue)
-  # Format text vector into one character string
-  return(paste(text, collapse = " "))
 }

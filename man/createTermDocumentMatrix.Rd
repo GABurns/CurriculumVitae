@@ -8,15 +8,15 @@ createTermDocumentMatrix(x, type = c("text", "url", "file"),
   lang = "english", excludeWords = NULL, textStemming = FALSE)
 }
 \arguments{
-\item{x:}{character string (plain text, web url, txt file path)}
+\item{x}{character string (plain text, web url, txt file path)}
 
-\item{type:}{specify whether x is a plain text, a web page url or a file path}
+\item{type}{specify whether x is a plain text, a web page url or a file path}
 
-\item{lang:}{the language of the text}
+\item{lang}{the language of the text}
 
-\item{excludeWords:}{a vector of words to exclude from the text}
+\item{excludeWords}{a vector of words to exclude from the text}
 
-\item{textStemming:}{reduces words to their root form}
+\item{textStemming}{reduces words to their root form}
 }
 \value{
 a list(tdm, freqTable)
