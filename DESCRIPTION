@@ -17,5 +17,6 @@ Imports:
     XML,
     stringi
 Suggests: 
-    testthat
+    testthat,
+    covr
 RoxygenNote: 6.1.1
